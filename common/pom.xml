@@ -3,19 +3,38 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <groupId>com.sage</groupId>
+        <groupId>com.nexo</groupId>
         <artifactId>Nexo</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.sage.common</groupId>
+    <groupId>com.nexo.common</groupId>
     <artifactId>common</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>common-cache</module>
+        <module>common-config</module>
+        <module>common-web</module>
+        <module>common-datasource</module>
+        <module>common-api</module>
+        <module>common-rpc</module>
+        <module>common-sms</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
