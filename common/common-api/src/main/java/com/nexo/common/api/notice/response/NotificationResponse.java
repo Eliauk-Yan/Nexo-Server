@@ -2,6 +2,8 @@ package com.nexo.common.api.notice.response;
 
 import com.nexo.common.base.response.BaseResponse;
 
+import java.io.Serial;
+
 /**
  * @classname NotificationResponse
  * @description 通知服务响应类
@@ -9,5 +11,8 @@ import com.nexo.common.base.response.BaseResponse;
  * @created by YanShijie
  */
 public class NotificationResponse extends BaseResponse {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
 }

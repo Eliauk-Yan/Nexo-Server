@@ -19,10 +19,18 @@
     </properties>
 
     <dependencies>
+        <!-- 1. 自动配置核心依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
+        <!-- 2. 配置属性提示（IDE 才会提示你的配置） -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- 3. 阿里云官方手机号码认证 SDK -->
         <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>alibabacloud-dypnsapi20170525</artifactId>

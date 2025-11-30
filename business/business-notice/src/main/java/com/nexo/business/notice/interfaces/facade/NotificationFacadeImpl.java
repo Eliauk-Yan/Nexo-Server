@@ -12,7 +12,7 @@ import org.apache.dubbo.config.annotation.DubboService;
  * @date 2025/11/28 17:34
  * @created by YanShijie
  */
-@DubboService(version = "1.0.0")
+@DubboService
 public record NotificationFacadeImpl(
         NotificationApplicationService notificationApplicationService) implements NotificationFacade {
 

@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.nexo.business.notice.domain.constant.NotificationState;
 import com.nexo.business.notice.domain.constant.NotificationType;
-import com.nexo.common.datasource.domin.entity.BaseEntity;
+import com.nexo.common.datasource.domain.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

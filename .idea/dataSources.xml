@@ -6,7 +6,7 @@
       <synchronize>true</synchronize>
       <imported>true</imported>
       <jdbc-driver>jdbc.RedisDriver</jdbc-driver>
-      <jdbc-url>jdbc:redis://192.168.147.101:6379/0</jdbc-url>
+      <jdbc-url>jdbc:redis://192.168.147.100:6379/0</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
@@ -14,16 +14,24 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="MySQL" uuid="a5bb8d3c-4d59-4ca7-9536-a01e2f86eae8">
+    <data-source source="LOCAL" name="MySQL" uuid="c1a7611c-7e87-4c5c-84dd-cbee5d83d05e">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://192.168.147.101:3306</jdbc-url>
+      <jdbc-url>jdbc:mysql://192.168.147.100:3306</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
         <property name="com.intellij.clouds.kubernetes.db.container.port" />
       </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="jdbc:mysql://192.168.147.100:3306/nexo [DEBUG]" group="​NoticeApplication" uuid="d81e3a28-0f37-49e7-9e99-e57a9daa6607">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://192.168.147.100:3306/nexo</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

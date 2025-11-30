@@ -1,4 +1,4 @@
-package com.nexo.common.datasource.domin.entity;
+package com.nexo.common.datasource.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
@@ -17,11 +17,11 @@ public class BaseEntity {
     @TableId(type = IdType.AUTO)
     private Long id;
 
-    @TableField(value = "create_at", fill = FieldFill.INSERT)
-    private LocalDateTime createAt;
+    @TableField(value = "created_at", fill = FieldFill.INSERT)
+    private LocalDateTime createdAt;
 
-    @TableField(value = "update_at", fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime updateAt;
+    @TableField(value = "updated_at", fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updatedAt;
 
     @TableField(value = "deleted", fill = FieldFill.INSERT)
     private Integer deleted;

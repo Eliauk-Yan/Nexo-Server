@@ -37,7 +37,17 @@
             <artifactId>dubbo-registry-nacos</artifactId>
             <version>3.3.5</version>
         </dependency>
-
+        <!--FastJson for Dubbo JSON utils-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.60</version>
+        </dependency>
+        <!--Gson for Dubbo JSON utils-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

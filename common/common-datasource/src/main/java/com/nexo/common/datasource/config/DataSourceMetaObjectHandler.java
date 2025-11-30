@@ -3,7 +3,6 @@ package com.nexo.common.datasource.config;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
@@ -14,14 +13,13 @@ import java.time.LocalDateTime;
  * @created by YanShijie
  */
 @Slf4j
-@Component
-public class MyMetaObjectHandler implements MetaObjectHandler {
+public class DataSourceMetaObjectHandler implements MetaObjectHandler {
 
     @Override
     public void insertFill(MetaObject metaObject) {
         log.info("开始插入填充...");
-        this.strictInsertFill(metaObject, "createAt", LocalDateTime.class, LocalDateTime.now());
-        this.strictInsertFill(metaObject, "updateAt", LocalDateTime.class, LocalDateTime.now());
+        this.strictInsertFill(metaObject, "createdAt", LocalDateTime.class, LocalDateTime.now());
+        this.strictInsertFill(metaObject, "updatedAt", LocalDateTime.class, LocalDateTime.now());
         this.strictInsertFill(metaObject, "deleted", Integer.class, 0);
         this.strictInsertFill(metaObject, "version", Integer.class, 0);
 

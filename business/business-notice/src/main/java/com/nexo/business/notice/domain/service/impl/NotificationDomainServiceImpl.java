@@ -1,9 +1,11 @@
 package com.nexo.business.notice.domain.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nexo.business.notice.domain.constant.NotificationType;
 import com.nexo.business.notice.domain.entity.Notification;
 import com.nexo.business.notice.domain.service.NotificationDomainService;
 import com.nexo.business.notice.infrastructure.adapter.SmsAdapter;
+import com.nexo.business.notice.infrastructure.mapper.NotificationMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -17,7 +19,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class NotificationDomainServiceImpl implements NotificationDomainService {
+public class NotificationDomainServiceImpl extends ServiceImpl<NotificationMapper, Notification> implements NotificationDomainService {
 
     private final SmsAdapter smsAdapter;
 

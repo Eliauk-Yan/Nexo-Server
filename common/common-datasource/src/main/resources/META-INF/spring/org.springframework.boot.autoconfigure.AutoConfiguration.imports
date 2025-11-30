@@ -1,2 +1,2 @@
-com.nexo.common.datasource.config.MybatisPlusConfig
+com.nexo.common.datasource.config.DataSourceAutoConfiguration
 

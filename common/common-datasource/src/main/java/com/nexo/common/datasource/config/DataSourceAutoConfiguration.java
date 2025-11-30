@@ -5,18 +5,24 @@ import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.BlockAttackInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
-
+import org.springframework.context.annotation.Configuration;
 /**
  * @classname MybatisPlusConfig
  * @description MyBatisPlus 配置类
  * @date 2025/11/28 15:56
  * @created by YanShijie
  */
-@AutoConfiguration
-public class MybatisPlusConfig {
+@Configuration
+@MapperScan(basePackages = "com.nexo.business.*.infrastructure.mapper")
+public class DataSourceAutoConfiguration {
+
+    @Bean
+    public DataSourceMetaObjectHandler myMetaObjectHandler() {
+        return new DataSourceMetaObjectHandler();
+    }
 
     @Bean
     @ConditionalOnMissingBean
