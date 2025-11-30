@@ -25,6 +25,18 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--公共API接口-->
+        <dependency>
+            <groupId>com.nexo.common.api</groupId>
+            <artifactId>common-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--RPC服务-->
+        <dependency>
+            <groupId>com.nexo.common.rpc</groupId>
+            <artifactId>common-rpc</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--公共配置-->
         <dependency>
             <groupId>com.nexo.config</groupId>

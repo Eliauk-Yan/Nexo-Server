@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: 192.168.147.101:3306/nexo
+    url: jdbc:mysql://192.168.147.101:3306/nexo
     username: yanshijie
     password: Ysj245913@.
     driver-class-name: com.mysql.cj.jdbc.Driver

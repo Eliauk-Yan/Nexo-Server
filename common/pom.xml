@@ -22,6 +22,7 @@
         <module>common-api</module>
         <module>common-rpc</module>
         <module>common-sms</module>
+        <module>common-base</module>
     </modules>
 
     <properties>
