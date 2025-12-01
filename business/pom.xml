@@ -15,7 +15,7 @@
 
     <modules>
         <module>business-user</module>
-        <module>business-notice</module>
+        <module>business-notification</module>
     </modules>
 
     <properties>

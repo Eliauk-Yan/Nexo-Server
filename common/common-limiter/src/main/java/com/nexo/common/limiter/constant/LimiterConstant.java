@@ -8,6 +8,6 @@ package com.nexo.common.limiter.constant;
  */
 public class LimiterConstant {
 
-    public static final String LIMIT_KEY_PREFIX = "nexo:limit:";
+    public static final String LIMIT_KEY_PREFIX = "limiter:";
 
 }

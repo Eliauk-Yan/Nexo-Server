@@ -2,11 +2,13 @@ package com.nexo.common.sms.impl;
 
 import com.aliyun.sdk.service.dypnsapi20170525.AsyncClient;
 import com.aliyun.sdk.service.dypnsapi20170525.models.SendSmsVerifyCodeRequest;
-import com.aliyun.sdk.service.dypnsapi20170525.models.SendSmsVerifyCodeResponseBody;
+import com.aliyun.sdk.service.dypnsapi20170525.models.SendSmsVerifyCodeResponse;
 import com.nexo.common.sms.SmsService;
 import com.nexo.common.sms.config.SmsProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @classname SmsServiceImpl
@@ -24,7 +26,7 @@ public class SmsServiceImpl implements SmsService {
 
 
     @Override
-    public void sendSmsVerifyCode(String phone, String code) {
+    public CompletableFuture<SendSmsVerifyCodeResponse> sendSmsVerifyCode(String phone, String code) {
         // 1. 创建发送短信验证码的请求参数
         SendSmsVerifyCodeRequest sendSmsVerifyCodeRequest = SendSmsVerifyCodeRequest.builder()
                 .signName(properties.getSignName())
@@ -34,19 +36,6 @@ public class SmsServiceImpl implements SmsService {
                 .build();
 
         // 2. 发送短信验证码
-        asyncClient.sendSmsVerifyCode(sendSmsVerifyCodeRequest)
-                .whenCompleteAsync((response, throwable) -> {
-                    // 2.1 发送失败
-                    if (throwable != null) {
-                        log.error("[验证码短信发送失败] phone={}, code={}, error={}", phone, code, throwable.getMessage(), throwable);
-                    }
-                    // 2.2 发送成功
-                    SendSmsVerifyCodeResponseBody body = response.getBody();
-                    if ("OK".equalsIgnoreCase(body.getCode())) {
-                        log.info("[验证码短信发送成功] phone={}, requestId={}", phone, body.getRequestId());
-                    } else {
-                        log.warn("[验证码短信业务失败] phone={}, code={}, message={}", phone, body.getCode(), body.getMessage());
-                    }
-                });
+        return asyncClient.sendSmsVerifyCode(sendSmsVerifyCodeRequest);
     }
 }

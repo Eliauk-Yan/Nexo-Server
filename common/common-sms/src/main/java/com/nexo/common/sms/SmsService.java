@@ -1,5 +1,9 @@
 package com.nexo.common.sms;
 
+import com.aliyun.sdk.service.dypnsapi20170525.models.SendSmsVerifyCodeResponse;
+
+import java.util.concurrent.CompletableFuture;
+
 public interface SmsService {
 
     /**
@@ -7,6 +11,6 @@ public interface SmsService {
      * @param phone 手机号
      * @param code 验证码
      */
-    void sendSmsVerifyCode(String phone, String code);
+    CompletableFuture<SendSmsVerifyCodeResponse> sendSmsVerifyCode(String phone, String code);
 
 }

@@ -19,9 +19,21 @@
     </properties>
 
     <dependencies>
+        <!--Redisson滑动窗口限流-->
         <dependency>
             <groupId>com.nexo.cache</groupId>
             <artifactId>common-cache</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- Spring AOP -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!-- baseException -->
+        <dependency>
+            <groupId>com.nexo.common.base</groupId>
+            <artifactId>common-base</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

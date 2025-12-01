@@ -1,10 +1,12 @@
 package com.nexo.common.limiter.config;
 
+import com.nexo.common.limiter.aspect.RateLimitAspect;
 import com.nexo.common.limiter.service.SlidingWindowRateLimiter;
 import com.nexo.common.limiter.service.impl.SlidingWindowRateLimiterImpl;
 import org.redisson.api.RedissonClient;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -18,7 +20,14 @@ import org.springframework.context.annotation.Bean;
 public class LimiterConfiguration {
 
     @Bean
+    @ConditionalOnMissingBean
     public SlidingWindowRateLimiter slidingWindowRateLimiter(RedissonClient redissonClient) {
         return new SlidingWindowRateLimiterImpl(redissonClient);
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public RateLimitAspect rateLimitAspect(SlidingWindowRateLimiter slidingWindowRateLimiter) {
+        return new RateLimitAspect(slidingWindowRateLimiter);
     }
 }

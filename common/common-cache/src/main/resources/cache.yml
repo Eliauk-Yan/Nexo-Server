@@ -4,5 +4,3 @@ spring:
       host: 192.168.147.100
       port: 6379
       password: Ysj245913@.
-      ssl:
-        enabled: true

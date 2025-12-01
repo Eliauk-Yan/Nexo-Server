@@ -22,7 +22,7 @@ import org.springframework.context.annotation.Bean;
 public class SmsAutoConfiguration {
 
     @Bean
-    @ConditionalOnMissingBean(AsyncClient.class)
+    @ConditionalOnMissingBean
     public AsyncClient asyncClient(SmsProperties properties) {
         return AsyncClient.builder()
                 .region(properties.getRegionId())
@@ -40,11 +40,11 @@ public class SmsAutoConfiguration {
     }
 
     @Bean
-    @ConditionalOnMissingBean(SmsService.class)
+    @ConditionalOnMissingBean
     public SmsService smsService(AsyncClient asyncClient, SmsProperties properties) {
         if (!properties.isConfigCompleted()) {
             log.warn("短信功能未完整配置（accessKey/signName/templateCode），已自动禁用");
-            return (phone, code) -> log.warn("跳过发送短信 → {} {}", phone, code);
+            throw new RuntimeException("短信功能未完整配置（accessKey/signName/templateCode），已自动禁用");
         }
         log.info("短信功能已启用，签名={}，模板={}", properties.getSignName(), properties.getTemplateCode());
         return new SmsServiceImpl(asyncClient, properties);
