@@ -23,6 +23,7 @@
         <module>common-rpc</module>
         <module>common-sms</module>
         <module>common-base</module>
+        <module>common-limiter</module>
     </modules>
 
     <properties>
